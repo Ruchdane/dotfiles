@@ -1,0 +1,36 @@
+layout {
+     default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+    }
+    tab name="NPM" direction="Horizontal"{
+        pane split_direction="Vertical" {
+            pane name="Dev" command="pnpm" size=50 borderless=true start_suspended=true{
+                args "start"
+            }
+            pane name="Dev" command="pnpm" size=50  borderless=true start_suspended=true{
+                args  "dev"
+            }
+            pane name="Lint" command="npm" borderless=true {
+                args "run" "lint"
+            }
+        }
+        pane name="Format" command="npm" size=4  borderless=true {
+             args "run" "format"
+        }
+    }
+    tab name="Code" focus=true split_direction="Vertical"{
+        pane command="helix" args="." borderless=true focus=true
+        pane name="Format" command="npm" size="30%"  borderless=true {
+             args "run" "test"
+        }
+    }
+    tab name="Version Control" {
+        pane command="lazygit"  borderless=true
+    }
+    tab name="File Explorer" {
+        pane command="joshuto"  borderless=true
+    }
+}

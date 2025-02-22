@@ -1,0 +1,43 @@
+layout {
+     default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+    }
+    tab name="E2E" direction="Horizontal" {
+        pane split_direction="Vertical" {
+            pane name="E2E" command="npm" size=100  borderless=true start_suspended=true{
+                args "run" "test:e2e"
+            }
+            pane name="Dev" command="npm" borderless=true start_suspended=true{
+                args "run" "dev"
+            }
+        }
+        pane name="Format" command="npm" size=4  borderless=true  start_suspended=true{
+             args "run" "test:studio"
+        }
+    }
+    tab name="NPM" direction="Horizontal"{
+        pane split_direction="Vertical" {
+            pane name="Dev" command="npm" size=100  borderless=true start_suspended=true{
+                args "run" "storybook"
+            }
+            pane name="Lint" command="npm" borderless=true start_suspended=true{
+                args "run" "lint"
+            }
+        }
+    }
+    tab name="Code" focus=true split_direction="Vertical"{
+        pane command="helix" args="." borderless=true focus=true
+        pane name="Format" command="npm" size="30%"  borderless=true {
+             args "run" "test:ui:unit"
+        }
+    }
+    tab name="Version Control" {
+        pane command="lazygit"  borderless=true
+    }
+    tab name="File Explorer" {
+        pane command="joshuto"  borderless=true
+    }
+}

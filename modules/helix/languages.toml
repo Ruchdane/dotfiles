@@ -1,0 +1,73 @@
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[language-server.cspell]
+command = "cspell-lsp"
+args = ["--stdio"]
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "cspell"]
+formatter = { command = "rustfmt" , args = ["--stdin"] }
+
+[[language]]
+name = "html"
+formatter = { command = 'prettierd', args = [".html"] }
+language-servers = [ "vscode-html-language-server", "superhtml", "emmet-lsp", "cspell" ]
+auto-format = true
+
+[[language]]
+name = "css"
+formatter = { command = 'prettierd', args = [".css"] }
+auto-format = true
+
+[[language]]
+name = "scss"
+formatter = { command = 'prettierd', args = [".scss"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettierd', args = [".js"] }
+language-servers = ["typescript-language-server","cspell"]
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = 'prettierd', args = [".ts"] }
+language-servers = ["typescript-language-server","cspell"]
+auto-format = true
+
+[[language]]
+name = "jsx"
+formatter = { command = 'prettierd', args = [".jsx"] }
+language-servers = [ "typescript-language-server", "cspell", "emmet-lsp"]
+auto-format = true
+
+[[language]]
+name = "tsx"
+formatter = { command = 'prettierd', args = [".tsx"] }
+language-servers = [ "typescript-language-server", "cspell", "emmet-lsp"]
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = 'prettierd', args = [".json"] }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+formatter = { command = 'prettierd', args = [".jsonc"] }
+auto-format = true
+
+# [language-server.astro-ls]
+# command = "astro-ls"
+# args = ["--stdio"]
+# config = {typescript = {tsdk = "/Users/user/.bun/install/global/node_modules/typescript/lib"}, environment = "node"}
+
+# [[language]]
+# name = "astro"
+# auto-format = true
+# language-servers = [ "astro-ls", "cspell", "emmet-lsp" ]
+
