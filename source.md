@@ -24,6 +24,7 @@
 - https://github.com/mrust1219/dotfiles/blob/main/.config/picom/picom.conf
 - https://github.com/vlabo/cspell-lsp
 - https://github.com/raexera/yoru
+- https://github.com/MarceColl/zen-browser-flake
 
 
 ## Reddit

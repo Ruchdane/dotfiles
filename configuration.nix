@@ -108,6 +108,8 @@
      telegram-desktop
      discord
 
+     inputs.zen-browser.packages."${system}".default
+     figma-linux
      # Email
      # betterbird
 

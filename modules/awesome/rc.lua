@@ -61,7 +61,7 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
- local names = {"HOME", "2", "3", "4","5", "6", "SOCIAL", "MANAGEMENT", "DASHBOARD"}
+ local names = {"HOME", "WORK", "3", "4","5", "6", "SOCIAL", "MANAGEMENT", "DASHBOARD"}
  local l = awful.layout.suit
  local layouts = {
       l.corner.sw,
@@ -364,7 +364,7 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Control", "Shift" }, "j",
                 function (c) c:move_to_screen(c.screen.index + 1) end,
                 {description = "move to screen right", group = "client"}),
-    
+
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
