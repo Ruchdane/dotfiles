@@ -1,3 +1,6 @@
+## NixOS Wiki
+- https://wiki.nixos.org/wiki/Zed
+
 ## NixOS Documentation
 
 - https://nixos.wiki/wiki/Home_Manager

@@ -211,6 +211,7 @@
      cmatrix
      wluma
     
+     zed-editor
      vscode
      vscode.fhs
      # Setup vscode extension     
@@ -231,8 +232,6 @@
     typescript
     tailwindcss-language-server
     nodePackages.typescript-language-server
-    cypress
-    prisma-engines
     vscode-langservers-extracted
     superhtml
     emmet-language-server
@@ -316,13 +315,6 @@
     ];
   })
 ];
- # Cypress
-  environment.variables.CYPRESS_INSTALL_BINARY = "0";
-  environment.variables.CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
- # Prisma:
-  environment.variables.PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
-  environment.variables.PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
-  environment.variables.PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
 
 # Obsidian
   nixpkgs.config.permittedInsecurePackages = [

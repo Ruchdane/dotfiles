@@ -5,6 +5,9 @@
   # manage.
   home.username = "ruchdane";
   home.homeDirectory = "/home/ruchdane";
+ # imports = [
+ #    ./modules/zed.nix
+ #  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -154,6 +157,9 @@
       };
     };
 
+    zed-editor = {
+      enable = true;
+    };
     home-manager = {
       enable = true;
     };
