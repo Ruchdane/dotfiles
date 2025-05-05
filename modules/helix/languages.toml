@@ -11,6 +11,13 @@ name = "rust"
 language-servers = ["rust-analyzer", "cspell"]
 formatter = { command = "rustfmt" , args = ["--stdin"] }
 
+[language-server.rust-analyzer]
+config = { procMacro = { ignored = { leptos_macro = [
+    # Optional:
+    # "component",
+    "server"
+] } } }
+
 [[language]]
 name = "html"
 formatter = { command = 'prettierd', args = [".html"] }
@@ -61,13 +68,13 @@ name = "jsonc"
 formatter = { command = 'prettierd', args = [".jsonc"] }
 auto-format = true
 
-# [language-server.astro-ls]
-# command = "astro-ls"
-# args = ["--stdio"]
+[language-server.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
 # config = {typescript = {tsdk = "/Users/user/.bun/install/global/node_modules/typescript/lib"}, environment = "node"}
 
-# [[language]]
-# name = "astro"
-# auto-format = true
-# language-servers = [ "astro-ls", "cspell", "emmet-lsp" ]
+[[language]]
+name = "astro"
+auto-format = true
+language-servers = [ "astro-ls", "cspell", "emmet-lsp" ]
 

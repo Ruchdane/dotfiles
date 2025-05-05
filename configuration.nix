@@ -247,6 +247,7 @@
     corepack
 
     # Setup dotnet dev Environment
+    dotnetCorePackages.sdk_9_0_1xx
     dotnet-sdk
     dotnet-runtime  
     dotnet-aspnetcore
@@ -263,6 +264,13 @@
     lldb
     rustc
     rustfmt
+    cargo-leptos
+    leptosfmt
+    cargo-tauri
+    trunk
+    wasm-pack
+    clippy
+    pkgs.llvmPackages.bintools
     pre-commit
     rustPackages.clippy
     alsa-lib
