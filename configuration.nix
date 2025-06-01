@@ -105,6 +105,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     anydesk
+     appimage-run
      dconf
     
      bluez
@@ -112,6 +113,7 @@
      # Browsers
      firefox 
      ungoogled-chromium
+     polypane
 
      # Chat
      teams-for-linux
