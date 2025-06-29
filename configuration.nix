@@ -122,6 +122,8 @@
 
      inputs.zen-browser.packages."${system}".default
      figma-linux
+     figma-agent
+     penpot-desktop
      # Email
      # betterbird
 
@@ -161,6 +163,8 @@
 
      # Productivity
      libreoffice 
+     manuskript
+     zettlr
      zotero
      super-productivity
      obsidian
@@ -469,8 +473,7 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
-    fira-code
-    fira-code-nerdfont
+    nerd-fonts.fira-code
     fira-code-symbols
     mplus-outline-fonts.githubRelease
     dina-font
