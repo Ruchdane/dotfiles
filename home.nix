@@ -69,14 +69,14 @@
   };
 
   services = {
-    picom = {
-      enable = true;      
-      inactiveOpacity = 0.9;
-      settings = {
-        rounded_corners = true;
-        corner-radius = 12;
-      };
-    };
+    # picom = {
+    #   enable = true;      
+    #   inactiveOpacity = 0.9;
+    #   settings = {
+    #     rounded_corners = true;
+    #     corner-radius = 12;
+    #   };
+    # };
   };
 
   gtk = {

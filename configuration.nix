@@ -110,7 +110,16 @@
     
      bluez
      acpi # For battery
+    # Accessibility
+    onboard
+    # Synching
+      syncthing
+
+     
      # Browsers
+     tor
+     tor-browser
+     deno
      firefox 
      ungoogled-chromium
      polypane
@@ -122,7 +131,6 @@
 
      inputs.zen-browser.packages."${system}".default
      figma-linux
-     figma-agent
      penpot-desktop
      # Email
      # betterbird
@@ -162,6 +170,7 @@
      kmix
 
      # Productivity
+     thunderbird
      libreoffice 
      manuskript
      zettlr
@@ -207,6 +216,12 @@
      astro-language-server  # ASTRO language server
      taplo                  # TOML language server
 
+     # AI Tools
+     opencode
+    # gemini-cli
+
+     
+     
      # Terminal tools 80% Rust
      wget
      fzf
@@ -226,6 +241,7 @@
      pkg-config
      cmatrix
      wluma
+     woff2
     
      zed-editor
      vscode
@@ -345,7 +361,13 @@
     "electron-25.9.0"
   ];
 
-  # 
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
 
   programs.nix-ld.enable = true;
   #JAVA
@@ -372,7 +394,14 @@
  
 
   services.xserver = {
-    displayManager.lightdm.enable = true; 
+    displayManager.lightdm = {
+    extraConfig = ''
+      [Greeter]
+      onscreen-keyboard=onboard
+    '';
+      enable = true;
+      greeters.slick.enable = true;
+    }; 
     xkb = {
       layout = "fr";
       variant = "azerty";
@@ -473,11 +502,17 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
+    arkpandora_ttf
     nerd-fonts.fira-code
     fira-code-symbols
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
+    helvetica-neue-lt-std
+    fragment-mono
+    aileron
+    liberation_ttf
+    font-awesome
   ];
 
   system.autoUpgrade.enable  = true;
