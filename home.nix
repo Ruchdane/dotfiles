@@ -94,8 +94,10 @@
   programs = {
     git = {
       enable = true;
-      userEmail = "ruchdaneabiodun@gmail.com";
-      userName = "ruchdane";
+      settings.user = {
+        email = "ruchdaneabiodun@gmail.com";
+        name = "ruchdane";
+      };
     };
 
     lazygit = {

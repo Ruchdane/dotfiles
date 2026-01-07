@@ -117,21 +117,21 @@
 
      
      # Browsers
-     tor
-     tor-browser
+     # tor
+     # tor-browser
      deno
      firefox 
      ungoogled-chromium
-     polypane
+     # polypane
 
      # Chat
-     teams-for-linux
+     # teams-for-linux
      telegram-desktop
      discord
 
      inputs.zen-browser.packages."${system}".default
      figma-linux
-     penpot-desktop
+     # penpot-desktop
      # Email
      # betterbird
 
@@ -144,7 +144,7 @@
      mate.caja
     
      # Download manager
-     motrix 
+     # motrix 
 
      # Screen recording
      obs-studio
@@ -163,11 +163,11 @@
      imagemagick
      
      # Video
-     libsForQt5.kdenlive
+     # kdePackages.kdenlive
      ffmpeg
 
      # Volume control
-     kmix
+     kdePackages.kmix
 
      # Productivity
      thunderbird
@@ -198,8 +198,8 @@
      ttyper
 
      # Game Dev
-     godot_4
-     ldtk
+     # godot_4
+     # ldtk
     
      # Remote Desktop
      remmina
@@ -242,6 +242,8 @@
      cmatrix
      wluma
      woff2
+
+    # ventoy
     
      zed-editor
      vscode
@@ -270,29 +272,29 @@
     corepack
 
     # Setup dotnet dev Environment
-    dotnetCorePackages.sdk_9_0_1xx
-    dotnet-sdk
-    dotnet-runtime  
-    dotnet-aspnetcore
-    dotnet-sdk_8
-    dotnet-runtime_8
-    dotnet-aspnetcore_8
-    omnisharp-roslyn
-    netcoredbg
+    # dotnetCorePackages.sdk_9_0_1xx
+    # dotnet-sdk
+    # dotnet-runtime  
+    # dotnet-aspnetcore
+    # dotnet-sdk_8
+    # dotnet-runtime_8
+    # dotnet-aspnetcore_8
+    # omnisharp-roslyn
+    # netcoredbg
 
     # Setup rust dev Envivronment
-    cargo
-    rust-analyzer
-    bacon
-    lldb
-    rustc
-    rustfmt
-    cargo-leptos
-    leptosfmt
-    cargo-tauri
-    trunk
-    wasm-pack
-    clippy
+    # cargo
+    # rust-analyzer
+    # bacon
+    # lldb
+    # rustc
+    # rustfmt
+    # cargo-leptos
+    # leptosfmt
+    # cargo-tauri
+    # trunk
+    # wasm-pack
+    # clippy
     pkgs.llvmPackages.bintools
     pre-commit
     rustPackages.clippy
@@ -309,8 +311,8 @@
     marksman
     
     # Setup wine
-    wineWowPackages.stable
-    winetricks
+    # wineWowPackages.stable
+    # winetricks
 
     # Setup pipewire
     pavucontrol
@@ -319,11 +321,11 @@
     #nodePackages
     nodePackages.cspell
 
-    skypeforlinux
+    # skypeforlinux
 
-    texstudio
-    texlab
-    texlive.combined.scheme-full
+    # texstudio
+    # texlab
+    # texlive.combined.scheme-full
     
     (vscode-with-extensions.override {
     vscodeExtensions = with vscode-extensions; [
@@ -500,7 +502,7 @@
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     liberation_ttf
     arkpandora_ttf
     nerd-fonts.fira-code
