@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+let
+  isWSL = builtins.pathExists "/proc/sys/fs/binfmt_misc/WSLInterop";
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -20,13 +23,57 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+    home.packages = with pkgs; [
+    # General CLI tools
+    lolcat
+    wget
+    fzf
+    lazydocker
+    btop
+    bat
+    fd
+    ripgrep
+    tree
+    p7zip
+    gcc
+    xclip
+    gawk
+    pkg-config
+    unzip
+    zip
+    joshuto
+    pre-commit
+
+    # Language servers / formatters
+    lua-language-server
+    stylua
+    sqls
+    nil
+    astro-language-server
+    taplo
+    marksman
+
+    # JS / Next.js / React dev environment
+    bun
+    nodejs
+    typescript
+    prettierd
+    tailwindcss-language-server
+    nodePackages.typescript-language-server
+    nodePackages.cspell
+    vscode-langservers-extracted
+    superhtml
+    emmet-language-server
+    corepack
+
+    opencode
+  ] ++ lib.optionals (!isWSL) [
+    neofetch
+    droidcam
+    wluma
     (pkgs.writeShellScriptBin "rebuild" ''
       sudo nixos-rebuild switch --flake ~/dotfiles/#default
     '')
-    pkgs.lolcat
-    pkgs.neofetch
-    pkgs.droidcam
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -43,10 +90,14 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  xdg.configFile."awesome".source = ./modules/awesome;
-  xdg.configFile."helix".source = ./modules/helix;
-  xdg.configFile."alacritty".source = ./modules/alacritty;
-  xdg.configFile."zellij".source = ./modules/zellij;
+   xdg.configFile = {
+    "helix".source = ./modules/helix;
+    "alacritty".source = ./modules/alacritty;
+    "zellij".source = ./modules/zellij;
+  } // lib.optionalAttrs (!isWSL) {
+    "awesome".source = ./modules/awesome;
+  };
+
 
 
   # Home Manager can also manage your environment variables through
@@ -79,14 +130,14 @@
     # };
   };
 
-  gtk = {
+  gtk = lib.mkIf (!isWSL) {
     enable = true;
     theme.name = "Dracula";
     cursorTheme.name = "Dracula";
     iconTheme.name = "Dracula";
   };
 
-  qt = {
+  qt = lib.mkIf (!isWSL) {
     enable = true;
     style.name = "Dracula";
   };
