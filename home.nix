@@ -45,6 +45,7 @@ in
     zip
     joshuto
     pre-commit
+    github-cli
 
     # Language servers / formatters
     lua-language-server
