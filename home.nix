@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{  pkgs, lib, inputs,... }:
 
 let
   isWSL = builtins.pathExists "/proc/sys/fs/binfmt_misc/WSLInterop";
@@ -25,6 +25,7 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
     home.packages = with pkgs; [
+    inputs.agy-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     devenv
     # General CLI tools
     lolcat

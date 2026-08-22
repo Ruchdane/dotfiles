@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     zen-browser.url = "github:youwen5/zen-browser-flake";
+    agy-nix.url = "github:bigFin/antigravity-cli-nix";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
